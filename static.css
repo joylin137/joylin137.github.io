@@ -1,0 +1,51 @@
+/* Runtime replacements for the original static portfolio layout. */
+html { scroll-behavior: smooth; }
+img { max-width: 100%; }
+.static-portfolio .preFade,
+.static-portfolio .preScale,
+.static-portfolio .preSlide,
+.static-portfolio .sqs-block-image,
+.static-portfolio .sqs-block-content { opacity: 1; }
+.static-portfolio .sqs-native-video video {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: #111;
+}
+.static-portfolio .sqs-native-video { width: 100%; }
+.static-portfolio .sqs-image-shape-container-element { visibility: visible; }
+body.static-menu-open { overflow: hidden; }
+.static-portfolio a:focus-visible,
+.static-portfolio button:focus-visible {
+  outline: 2px solid #3a5f4e;
+  outline-offset: 5px;
+}
+@media (max-width: 767px) {
+  .static-portfolio .header-menu {
+    top: var(--header-height, 80px);
+    height: calc(100dvh - var(--header-height, 80px));
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .static-portfolio.static-menu-open .header-menu {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 99;
+    background: #f3efe6;
+  }
+  .static-portfolio.static-menu-open .header-menu-nav,
+  .static-portfolio.static-menu-open .header-menu-nav-folder {
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,102 @@
+[
+  {
+    "file": "beyond-the-app-1.mp4",
+    "bytes": 9610221,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1928,
+          "height": 1080
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "format": {
+        "duration": "44.585833"
+      }
+    }
+  },
+  {
+    "file": "beyond-the-app-2.mp4",
+    "bytes": 4172856,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "format": {
+        "duration": "16.486009"
+      }
+    }
+  },
+  {
+    "file": "schedulink-1.mp4",
+    "bytes": 2677942,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1660,
+          "height": 1080
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "format": {
+        "duration": "61.950833"
+      }
+    }
+  },
+  {
+    "file": "schedulink-2.mp4",
+    "bytes": 782381,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "format": {
+        "duration": "41.727167"
+      }
+    }
+  },
+  {
+    "file": "the-ai-dependency-trap-1.mp4",
+    "bytes": 6213205,
+    "metadata": {
+      "programs": [],
+      "streams": [
+        {
+          "codec_type": "video",
+          "width": 1920,
+          "height": 1080
+        },
+        {
+          "codec_type": "audio"
+        }
+      ],
+      "format": {
+        "duration": "84.457167"
+      }
+    }
+  }
+]
