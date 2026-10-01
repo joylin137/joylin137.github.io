@@ -39,6 +39,7 @@
   const scaledTexts = [...document.querySelectorAll('.sqsrte-scaled-text-container')].map(root => {
     const text = root.querySelector('.sqsrte-scaled-text');
     if (!text) return null;
+    root.classList.add('loaded');
     const fit = () => {
       const availableWidth = root.getBoundingClientRect().width;
       if (!availableWidth) return;
