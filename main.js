@@ -36,6 +36,21 @@
     return fit;
   }).filter(Boolean);
   document.fonts.ready.then(() => fitImages.forEach(fit => fit()));
+  const scaledTexts = [...document.querySelectorAll('.sqsrte-scaled-text-container')].map(root => {
+    const text = root.querySelector('.sqsrte-scaled-text');
+    if (!text) return null;
+    const fit = () => {
+      const availableWidth = root.getBoundingClientRect().width;
+      if (!availableWidth) return;
+      text.style.fontSize = '100px';
+      const measuredWidth = text.getBoundingClientRect().width;
+      if (measuredWidth) text.style.fontSize = `${100 * availableWidth / measuredWidth}px`;
+    };
+    new ResizeObserver(fit).observe(root);
+    fit();
+    return fit;
+  }).filter(Boolean);
+  document.fonts.ready.then(() => scaledTexts.forEach(fit => fit()));
   if (menu) {
     menu.id = 'mobile-navigation';
     menu.inert = true;

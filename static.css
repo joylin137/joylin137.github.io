@@ -20,16 +20,55 @@ img { max-width: 100%; }
   --divider-height: 0px;
   padding-bottom: 0;
 }
-/* Restore the two authored rules between homepage case studies. */
-.static-portfolio.homepage main .has-section-divider .section-divider-display::after {
+/* Restore authored section rules without the Squarespace geometry runtime. */
+.static-portfolio main .has-section-divider .section-divider-display::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
   bottom: 0;
   height: var(--stroke-thickness, 1px);
-  background: var(--section-divider-stroke-color);
+  background: var(--section-divider-stroke-color, hsla(var(--black-hsl), 1));
   pointer-events: none;
+}
+/* Shape SVGs must fill their grid blocks instead of the default 300 x 150 box. */
+.static-portfolio .sqs-shape-block-container { position: relative; }
+.static-portfolio .sqs-shape {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+.static-portfolio .sqsrte-scaled-text-container { width: 100%; }
+.static-portfolio .sqsrte-scaled-text {
+  position: static;
+  left: auto;
+  display: inline-block;
+  width: max-content;
+}
+.static-portfolio .sqsrte-scaled-text h1 {
+  font-size: inherit;
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap !important;
+}
+#block-yui_3_17_2_1_1783874611384_72587 h4 { font-family: 'Almarai', sans-serif; }
+.static-portfolio .static-result-rule {
+  grid-area: 1 / 2 / 2 / 10;
+  z-index: 12;
+  transform: translateY(-24px);
+}
+.static-portfolio .static-result-rule .sqs-block { justify-content: center; }
+@media (min-width: 768px) {
+  .static-portfolio .fe-block-f20ceea9210dd457b907 {
+    grid-area: 20 / 7 / 25 / 26;
+  }
+  .static-portfolio .static-result-rule {
+    grid-area: 1 / 3 / 2 / 25;
+    transform: none;
+  }
 }
 .static-portfolio.homepage main .sqs-html-content a:is(
   [href="schedulink.html"],
