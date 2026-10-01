@@ -133,7 +133,7 @@ body.static-menu-open { overflow: hidden; }
     padding-inline: var(--sqs-mobile-site-gutter, 6vw);
     box-sizing: border-box;
   }
-  .static-portfolio .static-mobile-case .fluid-engine > .fe-block {
+  .static-portfolio .static-mobile-case .fe-block {
     grid-area: auto;
     min-width: 0;
   }
