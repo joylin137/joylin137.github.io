@@ -20,6 +20,35 @@ img { max-width: 100%; }
   --divider-height: 0px;
   padding-bottom: 0;
 }
+/* Restore the two authored rules between homepage case studies. */
+.static-portfolio.homepage main .has-section-divider .section-divider-display::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--stroke-thickness, 1px);
+  background: var(--section-divider-stroke-color);
+  pointer-events: none;
+}
+.static-portfolio.homepage main .sqs-html-content a:is(
+  [href="schedulink.html"],
+  [href="beyond-the-app.html"],
+  [href="the-ai-dependency-trap.html"]
+) {
+  color: #3A5F4E;
+  text-decoration: underline;
+  text-decoration-color: currentColor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.12em;
+}
+.static-portfolio.homepage main .sqs-html-content a:is(
+  [href="schedulink.html"],
+  [href="beyond-the-app.html"],
+  [href="the-ai-dependency-trap.html"]
+) .sqsrte-text-color--custom {
+  color: inherit !important;
+}
 body.static-menu-open { overflow: hidden; }
 .static-portfolio a:focus-visible,
 .static-portfolio button:focus-visible {
