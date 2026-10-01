@@ -15,6 +15,11 @@ img { max-width: 100%; }
 }
 .static-portfolio .sqs-native-video { width: 100%; }
 .static-portfolio .sqs-image-shape-container-element { visibility: visible; }
+/* All authored section dividers use the "none" shape. */
+.static-portfolio .has-section-divider[data-section-id] {
+  --divider-height: 0px;
+  padding-bottom: 0;
+}
 body.static-menu-open { overflow: hidden; }
 .static-portfolio a:focus-visible,
 .static-portfolio button:focus-visible {

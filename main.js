@@ -16,6 +16,26 @@
   syncHeader();
   if (header) new ResizeObserver(syncHeader).observe(header);
   document.fonts.ready.then(syncHeader);
+  const fitImages = [...document.querySelectorAll('.image-component-container-fit')].map(root => {
+    const wrapper = root.querySelector('.sqs-image');
+    const container = root.querySelector('.fluid-image-container');
+    const block = root.closest('.sqs-block');
+    if (!wrapper || !container || !block) return null;
+    const fit = () => {
+      const ratioParts = getComputedStyle(block).getPropertyValue('--image-component-native-aspect-ratio').trim().split('/').map(Number);
+      const ratio = ratioParts.length === 2 ? ratioParts[0] / ratioParts[1] : ratioParts[0];
+      const { width, height } = wrapper.getBoundingClientRect();
+      if (!ratio || !width || !height) return;
+      const imageHeight = Math.min(height, width / ratio);
+      const imageWidth = Math.min(width, height * ratio);
+      container.style.setProperty('--image-component-container-width', `${imageWidth}px`);
+      container.style.setProperty('--image-component-container-height', `${imageHeight}px`);
+    };
+    new ResizeObserver(fit).observe(wrapper);
+    fit();
+    return fit;
+  }).filter(Boolean);
+  document.fonts.ready.then(() => fitImages.forEach(fit => fit()));
   if (menu) {
     menu.id = 'mobile-navigation';
     menu.inert = true;
