@@ -130,6 +130,7 @@ body.static-menu-open { overflow: hidden; }
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-template-rows: none;
     gap: 12px;
+    padding-block: 32px;
     padding-inline: var(--sqs-mobile-site-gutter, 6vw);
     box-sizing: border-box;
   }
