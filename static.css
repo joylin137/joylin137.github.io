@@ -122,3 +122,58 @@ body.static-menu-open { overflow: hidden; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Let the narrow layout follow content height instead of fixed desktop grid rows. */
+@media (max-width: 767px) {
+  .static-portfolio .static-mobile-case .fluid-engine {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    gap: 12px;
+    padding-inline: var(--sqs-mobile-site-gutter, 6vw);
+    box-sizing: border-box;
+  }
+  .static-portfolio .static-mobile-case .fluid-engine > .fe-block {
+    grid-area: auto;
+    min-width: 0;
+  }
+  .static-portfolio .static-mobile-case .sqs-block,
+  .static-portfolio .static-mobile-interview .sqs-block {
+    height: auto;
+  }
+  .static-portfolio .static-mobile-case .static-mobile-rule { order: -1; grid-column: 1 / -1; }
+  .static-portfolio .static-mobile-case .static-mobile-case-title { order: 0; grid-column: 1 / -1; margin-bottom: 12px; }
+  .static-portfolio .static-mobile-case .static-mobile-summary { order: 1; grid-column: 1 / -1; }
+  .static-portfolio .static-mobile-case .static-mobile-tag { order: 2; }
+  .static-portfolio .static-mobile-case .static-mobile-image { order: 3; grid-column: 1 / -1; margin-top: 12px; }
+  .static-portfolio .static-mobile-case .static-mobile-link { order: 4; grid-column: 1 / -1; margin-top: 8px; }
+  .static-portfolio .static-mobile-tag .sqs-html-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 9px 8px !important;
+    box-sizing: border-box;
+  }
+  .static-portfolio .static-mobile-tag p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.35;
+    white-space: normal !important;
+  }
+  .static-portfolio .static-mobile-interview .fluid-engine {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-inline: var(--sqs-mobile-site-gutter, 6vw);
+    box-sizing: border-box;
+  }
+  .static-portfolio .static-mobile-interview .static-mobile-rule { order: 0; margin-bottom: 8px; }
+  .static-portfolio .static-mobile-interview .static-mobile-summary { order: 1; }
+  .static-portfolio .static-mobile-interview .static-mobile-image { order: 2; }
+  .static-portfolio .static-mobile-image .sqs-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: var(--image-component-native-aspect-ratio);
+  }
+}
